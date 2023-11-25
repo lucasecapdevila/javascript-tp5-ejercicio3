@@ -13,8 +13,8 @@ btnAgregar.addEventListener('click', (e) => {
   e.preventDefault()
   const tarea = input.value
 
-  //  Corre el código solo si el usuario NO pasa valores en blanco
-  if(tarea !== ''){
+  //  Corre el código solo si el usuario NO pasa valores en blanco y pasa un texto mayor a 4 caracteres
+  if(tarea !== '' && tarea.length >= 4){
     h2.classList.remove('d-none')
     const li = document.createElement('li')
     li.classList.add('list-group-item', 'list-group-item-warning', 'd-flex', 'justify-content-between', 'align-items-center')
@@ -24,14 +24,25 @@ btnAgregar.addEventListener('click', (e) => {
     ul.appendChild(li)
     form.reset()
     sinTareas.classList.add('d-none')
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Tarea agregada exitosamente",
+      showConfirmButton: false,
+      timer: 1500
+    });
   } else{
-    alert('Agrega un elemento')
+    Swal.fire({
+      title: "Ocurrió un error",
+      text: "La tarea no pudo ser agregada a la lista",
+      icon: "error"
+    });
   }
 })
 
 const agregarBotonEliminar = () => {
   const btnEliminar = document.createElement('button')
-  btnEliminar.innerHTML = '<i class="fa-regular fa-trash-can"></i>'
+  btnEliminar.innerText = 'Eliminar'
   btnEliminar.classList.add('btn', 'btn-danger')
   btnEliminar.addEventListener('click', (e) => {
     const item = e.target.parentElement
