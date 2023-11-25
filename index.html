@@ -12,7 +12,7 @@
   <title>Trabajo Práctico N°5 (DOM y BOM) - Ejercicio 3</title>
 </head>
 <body>
-  
+
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
@@ -39,6 +39,30 @@
 
   <main class="container my-2">
     <h1 class="text-center display-1">Lista de Tareas</h1>
+
+    <form>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="nuevaTarea"
+          placeholder="Agregar tarea..."
+          autocomplete="off"
+          minlength="4"
+          maxlength="30"
+          required
+        >
+        <button id="botonAgregar" class="btn btn-outline-success">Agregar</button>
+      </div>
+    </form>
+
+    <ul>
+      <!-- class="list-group list-group-flush border border-danger-subtle rounded-2 w-50 mx-auto" -->
+
+      <!-- <li class="list-group-item">An item</li> -->
+    </ul>
+
+    <p class="lead text-center">No tenés tareas pendientes.</p>
   </main>
 
   <footer class="text-center py-2 bg-dark text-light">
